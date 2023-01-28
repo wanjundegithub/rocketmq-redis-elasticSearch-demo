@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.dao.BookDao">
+    <resultMap id="book_map" type="com.company.model.Book">
+        <id property="id" column="book_id" jdbcType="BIGINT" javaType="java.lang.Long"/>
+        <result property="name" column="book_name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result property="price" column="book_price" jdbcType="DECIMAL" javaType="java.math.BigDecimal"/>
+        <result property="desc" column="book_desc" jdbcType="VARCHAR" javaType="java.lang.String"/>
+    </resultMap>
+
+    <select id="findByName"  resultMap="book_map"  useCache="false">
+        select * from testdb.book t where t.book_name=#{bookName}
+    </select>
+
+    <select id="findById"  resultMap="book_map" useCache="false">
+        select * from testdb.book t where t.book_id=#{bookID}
+    </select>
+
+    <update id="updateBook">
+        update testdb.book set book_name=#{book.name} ,book_price=#{book.price}
+        where book_id=#{book.id}
+    </update>
+
+
+</mapper>

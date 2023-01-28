@@ -1,0 +1,4 @@
+server:
+  port: 9001
+rocketmq:
+  name-server: 124.223.187.213:9876

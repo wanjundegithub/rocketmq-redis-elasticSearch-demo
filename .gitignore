@@ -1,0 +1,4 @@
+# Project exclude paths
+/redission-demo/target/
+/shop-order/target/
+/shop-user/target/
