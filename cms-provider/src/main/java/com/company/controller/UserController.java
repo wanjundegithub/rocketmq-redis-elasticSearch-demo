@@ -1,0 +1,25 @@
+package com.company.controller;
+
+import com.company.model.User;
+import com.company.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/user")
+public class UserController {
+
+    @Autowired
+    private UserService userService;
+
+    @PostMapping("/fetchUser")
+    public User fetchUserProfile(@RequestBody User user){
+        if(user==null||user.getId()==null){
+            return null;
+        }
+        return userService.fetchUserProfile(user.getId());
+    }
+}

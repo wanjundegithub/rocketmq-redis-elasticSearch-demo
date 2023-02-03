@@ -1,0 +1,5 @@
+server:
+  port: 9100
+liteflow:
+  enable: true
+  rule-source: config/flow.eml.xml

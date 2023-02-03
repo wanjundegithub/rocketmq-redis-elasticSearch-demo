@@ -2,22 +2,43 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="redission-demo" />
+        <module name="lite-flow-demo" />
         <module name="shop-order" />
+        <module name="call-back-demo" />
         <module name="shop-user" />
+        <module name="cms-provider" />
+        <module name="cms-consumer" />
+        <module name="api-gateway-zuul" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cms-service" target="8" />
+      <module name="nacos-discovery-center" target="8" />
+      <module name="user-service" target="8" />
+      <module name="zuul-demo" target="8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway-zuul" options="-parameters" />
+      <module name="call-back-demo" options="-parameters" />
+      <module name="cms-consumer" options="-parameters" />
+      <module name="cms-provider" options="-parameters" />
+      <module name="cms-service" options="-parameters" />
+      <module name="lite-flow-demo" options="-parameters" />
+      <module name="nacos-discovery-center" options="-parameters" />
       <module name="redission-demo" options="-parameters" />
       <module name="rocketmq-redis-elasticSearch-demo" options="-parameters" />
       <module name="shop-order" options="-parameters" />
       <module name="shop-user" options="-parameters" />
+      <module name="user-service" options="-parameters" />
+      <module name="zuul-demo" options="-parameters" />
     </option>
   </component>
 </project>

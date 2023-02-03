@@ -41,7 +41,7 @@ public class BookController {
     }
 
     @PostMapping("/updateBook")
-    public String updateBook(@RequestBody Book book){
+    public String updateBook(@RequestBody Book book) throws InterruptedException {
         if(book==null || StringUtils.isEmpty(book.getId())){
             return null;
         }

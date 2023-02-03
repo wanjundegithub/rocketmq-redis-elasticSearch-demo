@@ -12,6 +12,16 @@
         <module>shop-order</module>
         <module>shop-user</module>
         <module>redission-demo</module>
+        <module>lite-flow-demo</module>
+        <module>zuul-demo</module>
+        <module>nacos-discovery-center</module>
+        <module>api-gateway-zuul</module>
+        <module>cms-service</module>
+        <module>user-service</module>
+        <module>cms-service</module>
+        <module>cms-consumer</module>
+        <module>cms-provider</module>
+        <module>call-back-demo</module>
     </modules>
 
     <parent>
@@ -19,11 +29,6 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.2.RELEASE</version>
     </parent>
-
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -59,6 +64,6 @@
             <artifactId>rocketmq-client</artifactId>
             <version>4.5.2</version>
         </dependency>
-
     </dependencies>
+
 </project>

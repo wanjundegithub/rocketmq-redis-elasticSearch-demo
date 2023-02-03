@@ -1,0 +1,9 @@
+server:
+  port: 9301
+spring:
+  application:
+    name: cms-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 124.223.187.213:8848

@@ -1,0 +1,17 @@
+server:
+  port: 9300
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 124.223.187.213:8848
+zuul:
+  routes:
+    # cms路由
+    cms-provider-route :
+      service-id: cms-provider
+      path: /cms-provider/**      # service-id 对应的路径
+  # 忽略整个服务，对外提供接口
+  ignored-services: cms-provider
