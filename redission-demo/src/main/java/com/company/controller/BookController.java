@@ -1,16 +1,17 @@
 package com.company.controller;
 
 import com.company.model.Book;
+import com.company.model.LimitType;
+import com.company.model.RateLimiter;
 import com.company.service.BookCacheService;
 import com.company.service.BookService;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -65,5 +66,11 @@ public class BookController {
             return null;
         }
         return bookCacheService.findBookById(book.getId());
+    }
+
+    @GetMapping("/hello")
+    @RateLimiter(time = 2, count = 3, limitType = LimitType.IP)
+    public String hello(){
+        return "hello"+new Date();
     }
 }
